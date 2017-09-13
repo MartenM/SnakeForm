@@ -48,9 +48,10 @@
             // 
             // panel_game
             // 
-            this.panel_game.Location = new System.Drawing.Point(10, 82);
+            this.panel_game.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_game.Location = new System.Drawing.Point(9, 82);
             this.panel_game.Name = "panel_game";
-            this.panel_game.Size = new System.Drawing.Size(250, 250);
+            this.panel_game.Size = new System.Drawing.Size(253, 253);
             this.panel_game.TabIndex = 0;
             this.panel_game.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 

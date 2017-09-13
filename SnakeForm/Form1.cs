@@ -109,12 +109,8 @@ namespace SnakeForm
                 e.Graphics.DrawIcon(SystemIcons.Warning, 70, 75);
                 timer1.Stop();
                 return;
-            }
-
-
-            e.Graphics.FillRectangle(Brushes.DarkGray, 0, 0, 250, 250);
-            e.Graphics.DrawRectangle(Pens.DarkCyan, 0, 0, 250, 250);
-
+            }     
+            
             if(food != null)
             {
                 e.Graphics.FillRectangle(Brushes.Green, food.X * block_width, food.Y * block_height, block_width, block_height);
@@ -133,6 +129,8 @@ namespace SnakeForm
                     e.Graphics.FillRectangle(Brushes.AntiqueWhite, p.X * block_width, p.Y * block_height, block_width, block_height);
                 }
             }
+
+            //e.Graphics.DrawRectangle(Pens.LightGreen, 0, 0, 249, 249);
         }
 
         public void hideButtons()
@@ -183,6 +181,7 @@ namespace SnakeForm
         private void panel_reset_Click(object sender, EventArgs e)
         {
             timer1.Stop();
+            score = 0;
             snake = new Point[] { new Point(8, 8), new Point(8, 9), new Point(8, 10) };
             isPlaying = false;
             draw();

@@ -233,10 +233,29 @@ namespace SnakeForm
 
         private void createFood()
         {
-            Random rnd = new Random();
-            int x = rnd.Next(0, 20);
-            int y = rnd.Next(0, 20);
-            food = new Point(x, y);
+            while (true)
+            {
+                Random rnd = new Random();
+                int x = rnd.Next(0, 20);
+                int y = rnd.Next(0, 20);
+
+                Boolean inSnake = false;
+                for (int i = 0; i < snake.Length - 1; i++)
+                {
+                    if (x == snake[i].X && y == snake[i].Y)
+                    {
+                        inSnake = true;
+                        break;
+                    }
+                }
+                if (inSnake)
+                {
+                    continue;
+                }
+
+                food = new Point(x, y);
+                break;
+            }
         }
 
         private void label_speed_minus_Click(object sender, EventArgs e)

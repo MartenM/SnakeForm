@@ -19,13 +19,14 @@ namespace SnakeForm
         public int block_height = 250 / 20;
         public int block_width = 250 / 20;
 
-        public Keys last_pressed = Keys.S;
+        public Keys last_pressed = Keys.W;
 
         public Point[] snake = new Point[] { new Point(8, 8), new Point(8, 9), new Point(8, 10) };
 
         public Boolean isPlaying = false;
 
         public int score = 0;
+        public int highscore = 0;
 
         public int speed;
 
@@ -41,7 +42,8 @@ namespace SnakeForm
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            highscore = Properties.Settings.Default.Highscore;
+            label_record.Text = "Record: " + highscore;
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
@@ -96,6 +98,23 @@ namespace SnakeForm
         {
             if(e.KeyCode == Keys.A || e.KeyCode == Keys.S || e.KeyCode == Keys.D || e.KeyCode == Keys.W)
             {
+                if(e.KeyCode == Keys.W && last_pressed == Keys.S)
+                {
+                    return;
+                }
+                if (e.KeyCode == Keys.S && last_pressed == Keys.W)
+                {
+                    return;
+                }
+                if (e.KeyCode == Keys.A && last_pressed == Keys.D)
+                {
+                    return;
+                }
+                if (e.KeyCode == Keys.D && last_pressed == Keys.A)
+                {
+                    return;
+                }
+
                 last_pressed = e.KeyCode;
             }
         }
@@ -106,7 +125,7 @@ namespace SnakeForm
             {
                 e.Graphics.DrawString("You died...", SystemFonts.MenuFont, Brushes.Red, 100, 75);
                 e.Graphics.DrawString("Score: " + score, SystemFonts.MenuFont, Brushes.Yellow, 100, 90);
-                e.Graphics.DrawIcon(SystemIcons.Warning, 70, 75);
+                e.Graphics.DrawIcon(SystemIcons.Warning, 70, 75);               
                 timer1.Stop();
                 return;
             }     
@@ -192,7 +211,7 @@ namespace SnakeForm
         //Game logic
         private Boolean checkDeath()
         {
-            for(int i = 1; i < snake.Length - 1; i++)
+            for(int i = 1; i < snake.Length; i++)
             {
                 if(snake[0].X == snake[i].X && snake[0].Y == snake[i].Y)
                 {
@@ -218,6 +237,13 @@ namespace SnakeForm
             if(snake[0].X == food.X && snake[0].Y == food.Y)
             {
                 score += 100 + (speed * 50);
+
+                if(score > highscore)
+                {
+                    label_record.Text = "Record: " + score;
+                    highscore = score;
+                }
+
                 Point[] temp = new Point[snake.Length + 1];
 
                 for(int i = 0; i < snake.Length; i++)
@@ -277,6 +303,12 @@ namespace SnakeForm
             speed++;   
 
             label_speed_show.Text = speed.ToString();          
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Properties.Settings.Default.Highscore = highscore;
+            Properties.Settings.Default.Save();
         }
     }
 }

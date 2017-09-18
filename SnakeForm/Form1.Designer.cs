@@ -40,6 +40,7 @@
             this.label_speed_minus = new System.Windows.Forms.Label();
             this.label_speed_show = new System.Windows.Forms.Label();
             this.label_speed_plus = new System.Windows.Forms.Label();
+            this.label_record = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // timer1
@@ -58,11 +59,11 @@
             // label_score
             // 
             this.label_score.AutoSize = true;
-            this.label_score.Font = new System.Drawing.Font("Endless Boss Battle", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_score.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_score.ForeColor = System.Drawing.Color.Lime;
             this.label_score.Location = new System.Drawing.Point(12, 63);
             this.label_score.Name = "label_score";
-            this.label_score.Size = new System.Drawing.Size(113, 16);
+            this.label_score.Size = new System.Drawing.Size(106, 20);
             this.label_score.TabIndex = 2;
             this.label_score.Text = "Score: 0000";
             this.label_score.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -96,22 +97,22 @@
             // label_speed
             // 
             this.label_speed.AutoSize = true;
-            this.label_speed.Font = new System.Drawing.Font("Endless Boss Battle", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_speed.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_speed.ForeColor = System.Drawing.Color.Lime;
             this.label_speed.Location = new System.Drawing.Point(12, 344);
             this.label_speed.Name = "label_speed";
-            this.label_speed.Size = new System.Drawing.Size(45, 12);
+            this.label_speed.Size = new System.Drawing.Size(43, 15);
             this.label_speed.TabIndex = 6;
             this.label_speed.Text = "Speed";
             // 
             // label_speed_minus
             // 
             this.label_speed_minus.AutoSize = true;
-            this.label_speed_minus.Font = new System.Drawing.Font("Endless Boss Battle", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_speed_minus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_speed_minus.ForeColor = System.Drawing.Color.Lime;
             this.label_speed_minus.Location = new System.Drawing.Point(64, 344);
             this.label_speed_minus.Name = "label_speed_minus";
-            this.label_speed_minus.Size = new System.Drawing.Size(12, 12);
+            this.label_speed_minus.Size = new System.Drawing.Size(14, 15);
             this.label_speed_minus.TabIndex = 7;
             this.label_speed_minus.Text = "<";
             this.label_speed_minus.Click += new System.EventHandler(this.label_speed_minus_Click);
@@ -119,11 +120,11 @@
             // label_speed_show
             // 
             this.label_speed_show.AutoSize = true;
-            this.label_speed_show.Font = new System.Drawing.Font("Endless Boss Battle", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_speed_show.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_speed_show.ForeColor = System.Drawing.Color.Lime;
             this.label_speed_show.Location = new System.Drawing.Point(77, 344);
             this.label_speed_show.Name = "label_speed_show";
-            this.label_speed_show.Size = new System.Drawing.Size(13, 12);
+            this.label_speed_show.Size = new System.Drawing.Size(14, 15);
             this.label_speed_show.TabIndex = 8;
             this.label_speed_show.Text = "0";
             this.label_speed_show.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -131,14 +132,26 @@
             // label_speed_plus
             // 
             this.label_speed_plus.AutoSize = true;
-            this.label_speed_plus.Font = new System.Drawing.Font("Endless Boss Battle", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_speed_plus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_speed_plus.ForeColor = System.Drawing.Color.Lime;
             this.label_speed_plus.Location = new System.Drawing.Point(96, 344);
             this.label_speed_plus.Name = "label_speed_plus";
-            this.label_speed_plus.Size = new System.Drawing.Size(12, 12);
+            this.label_speed_plus.Size = new System.Drawing.Size(14, 15);
             this.label_speed_plus.TabIndex = 9;
             this.label_speed_plus.Text = ">";
             this.label_speed_plus.Click += new System.EventHandler(this.label_speed_plus_Click);
+            // 
+            // label_record
+            // 
+            this.label_record.AutoSize = true;
+            this.label_record.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_record.ForeColor = System.Drawing.Color.Lime;
+            this.label_record.Location = new System.Drawing.Point(143, 63);
+            this.label_record.Name = "label_record";
+            this.label_record.Size = new System.Drawing.Size(117, 20);
+            this.label_record.TabIndex = 10;
+            this.label_record.Text = "Record: 0000";
+            this.label_record.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // Form1
             // 
@@ -146,6 +159,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(274, 411);
+            this.Controls.Add(this.label_record);
             this.Controls.Add(this.label_speed_plus);
             this.Controls.Add(this.label_speed_show);
             this.Controls.Add(this.label_speed_minus);
@@ -160,6 +174,7 @@
             this.MinimumSize = new System.Drawing.Size(290, 450);
             this.Name = "Form1";
             this.Text = "Snake";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
@@ -180,6 +195,7 @@
         private System.Windows.Forms.Label label_speed_minus;
         private System.Windows.Forms.Label label_speed_show;
         private System.Windows.Forms.Label label_speed_plus;
+        private System.Windows.Forms.Label label_record;
     }
 }
 

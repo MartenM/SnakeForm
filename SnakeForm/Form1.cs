@@ -141,7 +141,7 @@ namespace SnakeForm
 
                 if (i != 0)
                 {
-                    e.Graphics.FillRectangle(Brushes.White, p.X * block_width, p.Y * block_height, block_width, block_height);
+                    e.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(0, 200 + (int) (Math.Sin(i * 0.5) * 20), 0)) , p.X * block_width, p.Y * block_height, block_width, block_height);
                 }
                 else
                 {
